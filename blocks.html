@@ -1,0 +1,48 @@
+<DOCTYPE html>
+<html>
+<head>
+	<title>Cute People - Playing with Flexbox</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+	
+<h1>Cute People</h1>
+<ul class="flexcontainer">
+	<a href="#"><li>1</li></a>
+	<li><a href="#">2</a></li>
+	<li><a href="#">3</a></li>
+	<li><a href="#">4</a></li>
+	<li><a href="#">5</a></li>
+	<li><a href="#">6</a></li>
+	<li><a href="#">7</a></li>
+	<li><a href="#">8</a></li>
+	<li><a href="#">9</a></li>
+	<li><a href="#">10</a></li>
+	<li><a href="#">11</a></li>
+	<li><a href="#">12</a></li>
+</ul>
+</body>
+<script>
+    var ws;
+    function socket() {
+      ws = new WebSocket("ws://127.0.0.1:8080");
+      ws.onmessage = function ( e ) {
+        var data = JSON.parse(e.data);
+        if ( data.r ) {
+          location.reload();
+        }
+      };
+    }
+    setInterval(function () {
+      if ( ws ) {
+        if ( ws.readyState !== 1 ) {
+          socket();
+        }
+      } else {
+        socket();
+      }
+    }, 1000);
+</script>
+</html>
+

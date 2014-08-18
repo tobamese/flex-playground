@@ -1,3 +1,7 @@
+$borderc: lightgreen;
+$borderdc: darken($borderc, 20%); 
+$bordervdc: darken($borderc, 50%);
+
 .flexcontainer {
 	padding:0;
 	margin:0;
@@ -32,4 +36,56 @@ h1{
 	text-align:center;
 	font-family: sans-serif;
 
+}
+
+.body {
+	font-family: Helvetica Neue, sans-serif, Arial;
+	p {font-size: 14pt;font-weight:400;}
+}
+.wrapper {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;  
+  
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  
+  font-weight: bold;
+  text-align: center;
+}
+
+.wrapper > * {
+  padding: 10px;
+  flex: 1 100%;
+}
+
+.header {
+	background-color:white;
+	height:300px;
+	border-bottom: 3px $borderdc solid;
+	.round {
+		border-radius: 70px;
+		background-color: white;
+		border: $borderdc 5px solid;
+		box-shadow: 1px 3px 15px lightgray;
+		position:relative;
+		top:4em;
+	}
+	.name {
+		font-weight: 300;
+		line-height: 1.8em;
+	}
+  
+}
+
+.footer {
+  align-self: flex-end;
+  border-top: 3px $borderdc solid;
+}
+
+.main {
+  text-align: left;
+  
 }
