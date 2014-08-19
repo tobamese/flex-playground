@@ -25,10 +25,10 @@ h1 {
   font-family: sans-serif; }
 
 .body {
-  font-family: Helvetica Neue, sans-serif, Arial; }
-  .body p {
-    font-size: 14pt;
-    font-weight: 400; }
+  font-family: Helvetica Neue, sans-serif, Arial;
+  font-size: p;
+    font-size-font-size: 14pt;
+    font-size-font-weight: 400; }
 
 .wrapper {
   display: -webkit-box;
@@ -38,6 +38,7 @@ h1 {
   display: flex;
   -webkit-flex-flow: row wrap;
   flex-flow: row wrap;
+  justify-content: center;
   font-weight: bold;
   text-align: center; }
 
@@ -48,7 +49,8 @@ h1 {
 .header {
   background-color: white;
   height: 300px;
-  border-bottom: 3px #38e038 solid; }
+  border-bottom: 3px #38e038 solid;
+  box-shadow: inset 1px 3px 15px lightgray; }
   .header .round {
     border-radius: 70px;
     background-color: white;
@@ -60,9 +62,16 @@ h1 {
     font-weight: 300;
     line-height: 1.8em; }
 
+.flex-items {
+  padding: 30px;
+  margin: 10px;
+  box-shadow: 1px 3px 15px lightgray;
+  border: #38e038 2px solid;
+  background-color: white; }
+
 .footer {
-  align-self: flex-end;
   border-top: 3px #38e038 solid; }
 
 .main {
-  text-align: left; }
+  text-align: left;
+  background-color: lightgreen; }

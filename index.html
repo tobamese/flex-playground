@@ -3,6 +3,8 @@
 <head>
 	<title>Tunes and Shots</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="jquery.jribbble-1.0.1.js"></script>
 
 </head>
 <body>
@@ -10,11 +12,23 @@
 <div class="wrapper">
   <header class="header"><img src="http://33.media.tumblr.com/avatar_7bba876e5a35_128.png" alt="" class="round"><h1 class="name">Liz Lara</h1></header>
   <article class="main">
-    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>  
+  	<div id="shotsByPlayerId"></div>
+  
   </article>
   <footer class="footer">Made with Love by <a href="https://twitter.com/tobamese">@tobamese</a></footer>
 </div>
 </body>
+<script type="text/javascript">
+$.jribbble.getShotsByPlayerId('tobamese', function (playerShots) {
+    var html = [];
+
+    $.each(playerShots.shots, function (i, shot) {
+        html.push('<img class ="flex-items" src="' + shot.image_teaser_url + '" >');
+    });
+
+    $('#shotsByPlayerId').html(html.join(''));
+}, {page: 1, per_page: 4});
+</script>
 <script>
     var ws;
     function socket() {
